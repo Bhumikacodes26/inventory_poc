@@ -1,16 +1,20 @@
 import { createTheme } from '@mui/material/styles'
 
-const SERIF = 'Georgia, "Times New Roman", serif'
 const SANS = '"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
-
-const headingStyle = { fontFamily: SERIF, fontWeight: 700 }
+const headingStyle = { fontFamily: SANS, fontWeight: 700, letterSpacing: '-0.02em' }
 
 const theme = createTheme({
   palette: {
-    primary: { main: '#1f3a5f', dark: '#14243b', light: '#4a6891' },
-    secondary: { main: '#b8892b' },
-    background: { default: '#f3f1ec', paper: '#ffffff' },
-    text: { primary: '#1c2733', secondary: '#5a6675' },
+    mode: 'light',
+    primary: { main: '#171717', dark: '#080808', light: '#404040', contrastText: '#ffffff' },
+    secondary: { main: '#525252', dark: '#262626', light: '#737373', contrastText: '#ffffff' },
+    background: { default: '#f5f5f5', paper: '#ffffff' },
+    text: { primary: '#171717', secondary: '#666666' },
+    divider: '#e5e5e5',
+    success: { main: '#404040' },
+    warning: { main: '#737373' },
+    error: { main: '#262626' },
+    info: { main: '#525252' },
   },
   typography: {
     fontFamily: SANS,
@@ -20,34 +24,54 @@ const theme = createTheme({
     h4: headingStyle,
     h5: headingStyle,
     h6: headingStyle,
+    button: { fontWeight: 600, letterSpacing: '0.01em' },
   },
-  shape: {
-    borderRadius: 6,
-  },
+  shape: { borderRadius: 8 },
   components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: { backgroundColor: '#f5f5f5' },
+        '*': { scrollbarColor: '#a3a3a3 #f5f5f5' },
+      },
+    },
     MuiButton: {
       defaultProps: { disableElevation: true },
       styleOverrides: {
-        root: { textTransform: 'none', fontWeight: 600 },
+        root: { textTransform: 'none', fontWeight: 600, borderRadius: 7 },
+        containedPrimary: { '&:hover': { backgroundColor: '#404040' } },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: { backgroundImage: 'none' },
+        rounded: { borderRadius: 10 },
+      },
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: { border: '1px solid #e5e5e5', boxShadow: '0 2px 10px rgba(0,0,0,0.035)' },
       },
     },
     MuiTableCell: {
       styleOverrides: {
         head: {
           fontWeight: 700,
-          color: '#14243b',
-          borderBottom: '2px solid #b8892b',
+          color: '#171717',
+          backgroundColor: '#f5f5f5',
+          borderBottom: '1px solid #d4d4d4',
         },
+        root: { borderColor: '#e5e5e5' },
       },
     },
-    MuiTab: {
-      styleOverrides: {
-        root: { textTransform: 'none', fontWeight: 600 },
-      },
-    },
+    MuiTab: { styleOverrides: { root: { textTransform: 'none', fontWeight: 600 } } },
     MuiChip: {
       styleOverrides: {
-        root: { fontWeight: 600 },
+        root: { fontWeight: 600, borderRadius: 6 },
+      },
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: { borderRadius: 7, '&.Mui-focused .MuiOutlinedInput-notchedOutline': { borderWidth: 1 } },
       },
     },
   },
