@@ -52,15 +52,15 @@ import { formatMoney } from "../utils/formatters";
 
 // Dashboard colors
 const COLORS = {
-  navy: '#142D4E',
-  blue: '#2563EB',
-  background: '#F4F7FB',
-  text: '#1E293B',
-  muted: '#64748B',
-  border: '#E5EAF1',
-  green: '#16A34A',
-  orange: '#EA580C',
-  red: '#DC2626',
+  navy: '#171717',
+  blue: '#404040',
+  background: '#F5F5F5',
+  text: '#171717',
+  muted: '#737373',
+  border: '#E5E5E5',
+  green: '#525252',
+  orange: '#737373',
+  red: '#262626',
 }
 
 // Reusable dashboard statistic card
@@ -248,7 +248,7 @@ export default function Dashboard() {
             sx={{
               borderRadius: 2,
               bgcolor: COLORS.navy,
-              '&:hover': { bgcolor: '#1E416B' },
+              '&:hover': { bgcolor: '#404040' },
             }}
           >
             Products
@@ -264,7 +264,7 @@ export default function Dashboard() {
           mb: 3,
           borderRadius: 3,
           color: '#FFFFFF',
-          background: 'linear-gradient(110deg, #142D4E, #2563EB)',
+          background: 'linear-gradient(110deg, #111111, #404040)',
         }}
       >
         <Stack
@@ -278,7 +278,7 @@ export default function Dashboard() {
               Inventory Overview
             </Typography>
 
-            <Typography sx={{ mt: 1, color: '#DCEAFE' }}>
+            <Typography sx={{ mt: 1, color: '#E5E5E5' }}>
               Monitor your products, stock levels and inventory value
               from one place.
             </Typography>
