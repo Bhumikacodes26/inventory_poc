@@ -1,3 +1,28 @@
-body {
+:root {
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #171717;
+  background: #f5f5f5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body, #root {
+  min-height: 100%;
   margin: 0;
+}
+
+body {
+  min-width: 320px;
+  background: #f5f5f5;
+}
+
+::selection {
+  color: #ffffff;
+  background: #404040;
+}
+
+a {
+  color: inherit;
 }
